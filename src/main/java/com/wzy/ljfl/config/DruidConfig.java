@@ -128,7 +128,7 @@ public class DruidConfig {
         reg.setServlet(new StatViewServlet());
         reg.addUrlMappings("/monitor/druid/*");
         /** 白名单 */
-        reg.addInitParameter("allow", "*");
+        reg.addInitParameter("allow", "0.0.0.0");
         /** IP黑名单(共同存在时，deny优先于allow) */
         // reg.addInitParameter("deny", "192.168.2.105");
         /** /druid/login.html登录时账号密码 */

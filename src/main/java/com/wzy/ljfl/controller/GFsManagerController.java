@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "/gfs")
@@ -30,6 +31,18 @@ public class GFsManagerController {
     @RequestMapping(value = "/save", method = RequestMethod.GET)
     public GFsEntity save(GFsEntity gFsEntity) {
         return gFsJPA.save(gFsEntity);
+    }
+
+    @RequestMapping(value = "/findOne", method = RequestMethod.GET)
+    public Optional<GFsEntity> find(Long id) {
+        return gFsJPA.findById(id);
+    }
+
+    @RequestMapping(value = "/pointManage", method = RequestMethod.GET)
+    public GFsEntity pointManage(Long id, int point) {
+        GFsEntity gFsEntity = gFsJPA.getOne(id);
+        gFsEntity.setPoint(gFsEntity.getPoint() + point);
+        return save(gFsEntity);
     }
 
 }
