@@ -42,6 +42,7 @@ public class GFsManagerController {
     public GFsEntity pointManage(Long id, int point) {
         GFsEntity gFsEntity = gFsJPA.getOne(id);
         gFsEntity.setPoint(gFsEntity.getPoint() + point);
+        gFsEntity.setPoint_now(point);
         return save(gFsEntity);
     }
 

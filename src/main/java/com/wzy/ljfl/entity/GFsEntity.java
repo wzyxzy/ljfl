@@ -48,6 +48,8 @@ public class GFsEntity implements Serializable {
     private int sort;
     @Column(name = "point")
     private int point;
+    @Column(name = "point_now")
+    private int point_now;
 
     public Long getId() {
         return id;
@@ -199,5 +201,13 @@ public class GFsEntity implements Serializable {
 
     public void setPoint(int point) {
         this.point = point;
+    }
+
+    public int getPoint_now() {
+        return point_now;
+    }
+
+    public void setPoint_now(int point_now) {
+        this.point_now = point_now;
     }
 }
