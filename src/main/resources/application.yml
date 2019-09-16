@@ -35,6 +35,18 @@ spring:
       hibernate:
         show_sql: true
         format_sql: true
-
+  servlet:
+    multipart:
+      max-request-size: 30MB
+      max-file-size: 100MB
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+  thymeleaf:
+    mode: LEGACYHTML5
+    cache: false
+    servlet:
+      content-type: text/html
 server:
   port: 8088
